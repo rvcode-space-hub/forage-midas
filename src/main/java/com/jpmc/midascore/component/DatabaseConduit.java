@@ -12,6 +12,7 @@ public class DatabaseConduit {
         this.userRepository = userRepository;
     }
 
+    @SuppressWarnings("null")
     public void save(UserRecord userRecord) {
         userRepository.save(userRecord);
     }
