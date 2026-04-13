@@ -9,7 +9,8 @@ public class TransactionRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double amount;
+    private double amount;
+    private double incentive;
 
     @ManyToOne
     private UserRecord sender;
@@ -17,16 +18,25 @@ public class TransactionRecord {
     @ManyToOne
     private UserRecord recipient;
 
-    // Getter
-    public Double getAmount() {
+    // amount
+    public double getAmount() {
         return amount;
     }
 
-    // ✅ Correct Setter
-    public void setAmount(Double amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
+    // incentive 
+    public double getIncentive() {
+        return incentive;
+    }
+
+    public void setIncentive(double incentive) {
+        this.incentive = incentive;
+    }
+
+    // sender
     public UserRecord getSender() {
         return sender;
     }
@@ -35,6 +45,7 @@ public class TransactionRecord {
         this.sender = sender;
     }
 
+    // recipient
     public UserRecord getRecipient() {
         return recipient;
     }
@@ -43,3 +54,5 @@ public class TransactionRecord {
         this.recipient = recipient;
     }
 }
+
+   

@@ -40,8 +40,8 @@ public class UserRecord {
         return balance;
     }
 
-    public void setBalance(float balance) {
-        this.balance = balance;
+    public void setBalance(double balance) {
+        this.balance = (float) balance;
     }
 
     public UserRecord orElse(Object object) {
