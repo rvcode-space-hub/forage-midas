@@ -67,8 +67,8 @@ public class TransactionService {
 
 
 
-        // Task 4 Update code
-// ---------------------------------------------------------------- 
+// Task 4 Update code
+
         // Create Transaction with APIs
 TransactionRecord record = new TransactionRecord();
 record.setAmount(amount);
@@ -78,11 +78,13 @@ record.setRecipient(recipient);
 System.out.println("Record Create");
 
 // Call Incentive API
+
 double incentive = incentiveService.getIncentiveAmount(record);
 
 record.setIncentive(incentive);
 
 // Update balances
+
 sender.setBalance((float)sender.getBalance() - amount);
 
 recipient.setBalance((float)
@@ -90,6 +92,7 @@ recipient.setBalance((float)
 );
 
 // Save
+
 userRepository.save(sender);
 userRepository.save(recipient);
 transactionRepository.save(record);
@@ -100,6 +103,7 @@ System.out.println("Recipient: " + recipient.getName());
 
 
 //DEBUG Task 4 
+
 if (sender.getName().equalsIgnoreCase("wilbur")) {
     System.out.println("wilbur FINAL: " + sender.getBalance());
 }
